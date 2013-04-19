@@ -1,10 +1,16 @@
-App = Ember.Application.create({});
+//= require jquery
+//= require handlebars.runtime
+//= require ember
+//= require ember-data
+//= require showdown
+//= require moment
+//= require_tree ./templates
+
+App = Ember.Application.create();
 
 App.Store = DS.Store.extend({
-  revision: 12,
-  adapter: DS.RESTAdapter.extend({
-    url: 'http://localhost:3000'
-  })
+  revision: 11,
+  adapter: DS.FixtureAdapter.create()
 });
 
 App.Router.map(function() {
@@ -42,6 +48,10 @@ App.Post = DS.Model.extend({
   extended: attr('string'),
   publishedAt: attr('date')
 });
+
+App.Post.FIXTURES = [
+  {id: 1, title: 'zomg', author: 'ebryn', intro: 'zomg', extended: 'ZOMG ZOMG ZOMG ZOMG', publishedAt: "2013-04-19"}
+];
 
 var showdown = new Showdown.converter();
 
