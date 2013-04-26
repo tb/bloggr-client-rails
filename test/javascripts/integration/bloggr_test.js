@@ -3,7 +3,7 @@ module("/conversations", {
     Ember.run(App, App.advanceReadiness);
   },
   teardown: function() {
-    Ember.run(App, App.reset);
+    App.reset();
   }
 });
 
