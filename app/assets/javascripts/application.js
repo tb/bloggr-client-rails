@@ -8,10 +8,7 @@
 
 App = Ember.Application.create();
 
-App.Store = DS.Store.extend({
-  revision: 11,
-  adapter: DS.FixtureAdapter.create()
-});
+App.ApplicationAdapter = DS.FixtureAdapter.extend();
 
 App.Router.map(function() {
   this.resource('about');
@@ -22,20 +19,21 @@ App.Router.map(function() {
 
 App.PostsRoute = Ember.Route.extend({
   model: function() {
-    return App.Post.find();
+    return this.store.find('post');
   }
 });
 
 App.PostController = Ember.ObjectController.extend({
   isEditing: false,
 
-  edit: function() {
-    this.set('isEditing', true);
-  },
+  actions: {
+    edit: function() {
+      this.set('isEditing', true);
+    },
 
-  doneEditing: function() {
-    this.set('isEditing', false);
-    this.get('store').commit();
+    doneEditing: function() {
+      this.set('isEditing', false);
+    }
   }
 });
 

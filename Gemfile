@@ -21,8 +21,8 @@ group :assets do
 end
 
 gem 'ember-rails'
-gem 'ember-source', '1.0.0.rc5'
-gem 'handlebars-source', '1.0.0.rc4'
+gem 'ember-source', '~> 1.1.2'
+gem 'ember-data-source', '~> 1.0.0.beta.3'
 gem 'qunit-rails'
 
 # To use ActiveModel has_secure_password
