@@ -7,7 +7,7 @@ module "Post",
 
 test "#title", ->
   build('post').then (post) ->
-    equal post.get('title'), 'Title'
+    equal post.get('title'), 'zomg'
 
-  build('post', title: 'New Title').then (post) ->
-    equal post.get('title'), 'New Title'
+  build('post', title: 'zonk').then (post) ->
+    equal post.get('title'), 'zonk'

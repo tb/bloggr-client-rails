@@ -14,6 +14,7 @@ test "/", ->
 test "/posts", ->
   expect 2
 
+  create('post').
   visit("/posts").then ->
     ok exists("th:contains(Recent Posts)"), "Recent posts list is rendered"
     ok exists("*:contains(Please select a post)")
@@ -21,6 +22,7 @@ test "/posts", ->
 test "/posts/:post_id", ->
   expect 4
 
+  create('post').
   visit("/posts").then(->
     click "td a:first"
   ).then ->

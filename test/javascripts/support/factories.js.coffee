@@ -1,6 +1,6 @@
 Factory.define 'post',
-  title: 'Title'
-  author: 'Author'
-  intro: 'Intro'
-  extended: 'Extended'
-  publishedAt: new Date(1999, 5, 1, 12, 15)
+  title: "zomg"
+  author: "ebryn"
+  intro: "zomg"
+  extended: "ZOMG ZOMG ZOMG ZOMG"
+  publishedAt: new Date(2013, 3, 19)
