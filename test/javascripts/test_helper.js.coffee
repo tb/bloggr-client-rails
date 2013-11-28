@@ -1,4 +1,6 @@
 #= require application
+#= require_tree ./support/libs
+#= require_tree ./support
 #= require_tree .
 #= require_self
 
