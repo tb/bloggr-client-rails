@@ -1,6 +1,16 @@
 App = Ember.Application.create({});
 
-var posts = [{
+App.ApplicationAdapter = DS.FixtureAdapter.extend()
+
+App.Post = DS.Model.extend({
+  title: DS.attr('string'),
+  author: DS.attr('string'),
+  date: DS.attr('date'),
+  excerpt: DS.attr('string'),
+  body: DS.attr('string')
+})
+
+App.Post.FIXTURES = [{
   id: '1',
   title: "Taco Tuesday",
   author: { name: "President Business" },
@@ -24,13 +34,13 @@ App.Router.map(function() {
 
 App.PostsRoute = Ember.Route.extend({
   model: function() {
-    return posts;
+    return this.store.find('post');
   }
 });
 
 App.PostRoute = Ember.Route.extend({
   model: function(params) {
-    return posts.findBy('id', params.post_id);
+    return this.store.find('post', params.post_id);
   }
 });
 
