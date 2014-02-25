@@ -62,10 +62,6 @@
 
     <hr>
 
-    <div class='intro'>
-      {{format-markdown excerpt}}
-    </div>
-
     <div class='below-the-fold'>
       {{format-markdown body}}
     </div>
@@ -73,7 +69,6 @@
 
   <script type="text/x-handlebars" id="post/_edit">
     <p>{{input type="text" value=title}}</p>
-    <p>{{input type="text" value=excerpt}}</p>
     <p>{{textarea value=body}}</p>
   </script>
 

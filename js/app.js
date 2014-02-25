@@ -5,14 +5,12 @@ var posts = [{
   title: "Taco Tuesday",
   author: "President Business",
   date: new Date('2-8-2014'),
-  excerpt: "",
   body: "Hi, I'm President Business, president of the Octan corporation and the world. Let's take extra care to follow the instructions or you'll be *put to sleep*, and don't forget Taco Tuesday's coming next week."
 }, {
   id: '2',
   title: "Top 3 reasons why Everything is Awesome",
   author: "President Business",
   date: new Date('2-7-2014'),
-  excerpt: "",
   body: "1. You're part of a team\n\n2. We're living our dream\n\n3. Gonna win forever, party forever"}];
 
 App.Router.map(function() {
