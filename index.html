@@ -33,7 +33,7 @@
             </thead>
             {{#each model}}
             <tr><td>
-                {{#link-to 'post' this}}{{title}} <small class='muted'>by {{author.name}}</small>{{/link-to}}
+                {{#link-to 'post' this}}{{title}} <small class='muted'>by {{author}}</small>{{/link-to}}
             </td></tr>
             {{/each}}
           </table>
@@ -58,7 +58,7 @@
     {{/if}}
 
     <h1>{{title}}</h1>
-    <h2>by {{author.name}} <small class='muted'>({{format-date date}})</small></h2>
+    <h2>by {{author}} <small class='muted'>({{format-date date}})</small></h2>
 
     <hr>
 
