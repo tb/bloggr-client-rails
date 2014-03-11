@@ -1,6 +1,19 @@
 App = Ember.Application.create({});
+// 1. add the adpater
+// 2. create the models
+// 3. create the server/fixtures
+// 4. connect code
 
-var posts = [{
+App.ApplicationAdapter = DS.FixtureAdapter.extend({})
+
+App.Post = DS.Model.extend({
+  title: DS.attr(),
+  author: DS.attr(),
+  date: DS.attr(),
+  body: DS.attr()
+})
+
+App.Post.FIXTURES = [{
   id: '1',
   title: "Taco Tuesday",
   author: "President Business",
@@ -22,13 +35,13 @@ App.Router.map(function() {
 
 App.PostsRoute = Ember.Route.extend({
   model: function() {
-    return posts;
+    return this.store.find('post');
   }
 });
 
 App.PostRoute = Ember.Route.extend({
   model: function(params) {
-    return posts.findBy('id', params.post_id);
+    return this.store.find('post', params.post_id);
   }
 });
 
