@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "bower": "*",
+    "karma": "*",
+    "karma-mocha": "*",
+    "karma-chai": "*",
+    "karma-sinon-chai": "~0.1.4"
+  }
+}
